@@ -1,4 +1,4 @@
-# Trainings on Git and GitHub
+# Git diagrams
 
 ## Mermaid documentation
 
