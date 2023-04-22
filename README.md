@@ -1,2 +1,3 @@
-# trainings
- Resources for training sessions on programming topics
+# Trainings
+
+Resources for training sessions on programming topics
