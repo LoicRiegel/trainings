@@ -1,6 +1,10 @@
 import string
 
-CATALOGUE: dict[str, int]
+CATALOGUE: dict[str, int] = {
+    
+}
+
+
 class VehicleApplication:
 
     def __init__(self) -> None:
