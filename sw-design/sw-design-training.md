@@ -348,40 +348,19 @@ def generate_vehicle_license(_id: str) -> str:
 
 ---
 <!--
-Issue: import *
-Fix: remove wildcard and import only what you need
--->
-```Python
-from random import *
-from string import *
-
-
-def generate_vehicle_id(length: int = 8) -> str:
-    return "".join(choices(ascii_uppercase, k=length))
-
-def generate_vehicle_license(_id: str) -> str:
-    id_part = _id[:2]
-    number_part = "".join(choices(digits, k=2))
-    letter_part = "".join(choices(ascii_uppercase, k=2))
-    return f"{id_part}-{number_part}-{letter_part}"
-```
-
-
----
-<!--
 Issue: unnecessary complexity
 Fix: simplify by choosing a more appropriate data structure
 -->
 ```Python
-POSITIVE_WORDS = {
+POSITIVE_WORDS: list[str] = [
     "awesome", "great", "super", "fun",
     "entertaining", "cool", "adventurous", "nice",
-}
+]
 
-NEGATIVE_WORDS = {
+NEGATIVE_WORDS: list[str] = [
     "boring", "annoying", "useless", "bad",
     "terrible", "gross", "stupid", "hate",
-}
+]
 
 
 def detect_positive(review: str) -> bool:
@@ -405,12 +384,12 @@ def main():
 
 ---
 ```Python
-POSITIVE_WORDS: set = {
+POSITIVE_WORDS: set[str] = {
     "awesome", "great", "super", "fun",
     "entertaining", "cool", "adventurous", "nice",
 }
 
-NEGATIVE_WORDS: set = {
+NEGATIVE_WORDS: set[str] = {
     "boring", "annoying", "useless", "bad",
     "terrible", "gross", "stupid", "hate",
 }
@@ -441,7 +420,6 @@ class Customer:
     name: str
     email: str
     active: bool
-
 
 class CustomerManager:
     customers: list[Customer] = []
@@ -640,51 +618,4 @@ def generate_breadcrumbs(geolocation: Geolocation) -> dict[str, str]:
             "province_url"
         ] = f"{main_url}/region/province/{geolocation.province.lower()}/"
     return breadcrumbs
-```
-
----
-<!--
-Issue: inappropriate intimacy
-Issue: not as close the data it needs! (cf information expert)
-Fix: turn this method static or take it out of the class
--->
-```Python
-class Day(Enum):
-    MONDAY = auto()
-    ...
-    SATURDAY = auto()
-    SUNDAY = auto()
-
-class Calendar:
-    def __init__(self, year: int):
-        self.year = year
-        
-    def add_event(self, event: Event) -> None:
-        """Add a event to the calendar."""
-        ...
-    
-    def is_weekend(self, day: Day) -> bool:
-        """Return whether a day is a weekend day or not."""
-        return day in (Day.SATURDAY, Day.SUNDAY)
-```
-
----
-```Python
-class Day(Enum):
-    MONDAY = auto()
-    ...
-    SATURDAY = auto()
-    SUNDAY = auto()
-
-    def is_weekend(self) -> bool:
-        return self in (self.SATURDAY, self.SUNDAY)
-
-
-class Calendar:
-    def __init__(self, year: int):
-        self.year = year
-        
-    def add_event(self, event: Event) -> None:
-        """Add a event to the calendar."""
-        ...
 ```
