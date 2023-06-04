@@ -18,7 +18,7 @@ class Com:
         self,
         host: str = "localhost",
         port: str = "3000",
-        ...
+        # plus other params
     ) -> None:
         self.host = host
         self.port = port
