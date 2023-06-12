@@ -1,6 +1,11 @@
 # Inheritance
 
-# do a Mermaid diagram
+"""
+TODO for Francois:
+- do Mermaid diagrams
+- actually don't use this code snippet. It's too simple and theoretical. I want something also simple and short
+  but that looks more like production /real-life example. 
+""" 
 
 class Parent:
     def __init__(self, x, y):
