@@ -37,24 +37,6 @@ class Calendar:
 
 # AFTER
 
-class Day(Enum):
-    MONDAY = auto()
-    ...
-    SATURDAY = auto()
-    SUNDAY = auto()
-
-    def is_weekend(self) -> bool:
-        return self in (self.SATURDAY, self.SUNDAY)
-
-
-class Calendar:
-    def __init__(self, year: int):
-        self.year = year
-        
-    def add_event(self, event: Event) -> None:
-        """Add a event to the calendar."""
-        ...
-
 
 class Day(Enum):
     MONDAY = auto()

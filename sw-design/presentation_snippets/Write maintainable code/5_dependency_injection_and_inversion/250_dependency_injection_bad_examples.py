@@ -1,3 +1,5 @@
+# Example 1: creation inside a function
+
 class StripePaymentHandler: # do not show in slide
     def handle_payment():
         pass
@@ -7,6 +9,9 @@ def process_payment(amount: int) -> None:
     payment_handler = StripePaymentHandler()
     payment_handler.handle_payment(amount)
     logging.info("Order completed.")
+
+
+# Example 2: creation in class init
 
 
 class Com:
